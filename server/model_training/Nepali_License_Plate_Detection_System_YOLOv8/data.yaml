@@ -1,0 +1,5 @@
+train: /content/drive/MyDrive/Nepali_License_Plate_Detection_System_YOLOv8/data/train/images
+val: /content/drive/MyDrive/Nepali_License_Plate_Detection_System_YOLOv8/data/train/images
+
+nc: 1
+names: ['Nepali_License_Plate']
