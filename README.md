@@ -1,0 +1,1 @@
+Nepali_Vehicle_License_Plate_Detector_And_Reader_YOLOv8_EasyOcr
