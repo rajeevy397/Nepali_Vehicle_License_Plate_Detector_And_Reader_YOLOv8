@@ -1,0 +1,11 @@
+# requirements.txt
+
+# General dependencies
+opencv-python==4.5.1
+ultralytics==0.0.8
+easyocr==1.4.1
+Pillow==8.2.0
+
+# Additional dependencies
+numpy==1.20.3
+subprocess-run==0.5.2
