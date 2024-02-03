@@ -1,0 +1,24 @@
+[
+  {
+    "image_path": "1_resized.jpg",
+    "coordinates": {
+      "x1": 1738,
+      "y1": 1354,
+      "x2": 2260,
+      "y2": 1624
+    },
+    "upper_characters": [
+      "\u0967",
+      "-",
+      "\u0966"
+    ],
+    "lower_characters": [
+      "\u096b",
+      "\u0966",
+      "\u0966",
+      "\u0967",
+      "\u092a'"
+    ],
+    "characters": "\u0967-\u0966 \u096b\u0966\u0966\u0967\u092a'"
+  }
+]

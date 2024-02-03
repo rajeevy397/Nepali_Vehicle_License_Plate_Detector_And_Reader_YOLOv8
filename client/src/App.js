@@ -14,7 +14,7 @@ function App() {
         <Route path="/predict_image" element={<Predict_image/>} />
         <Route path="/predict_image_charModel" element={<PredictImage_characterModel/>} />
         <Route path="/predict_video" element={<Predict_video/>} />
-        <Route path="/predict_image_charModel" element={<PredictVideo_characterModel/>} />
+        <Route path="/PredictVideo_characterModel" element={<PredictVideo_characterModel/>} />
       </Routes>
     </Router>
   );

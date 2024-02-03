@@ -1,0 +1,21 @@
+[
+  {
+    "image_path": "1_resized.jpg",
+    "coordinates": {
+      "x1": 1262,
+      "y1": 849,
+      "x2": 1558,
+      "y2": 994
+    },
+    "upper_characters": [
+      "-",
+      "-"
+    ],
+    "lower_characters": [
+      "\u0967",
+      "\u0966",
+      "\u0966"
+    ],
+    "characters": "-- \u0967\u0966\u0966"
+  }
+]

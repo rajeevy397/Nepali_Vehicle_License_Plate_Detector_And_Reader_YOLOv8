@@ -1,0 +1,12 @@
+[
+    {
+        "name": "NEPALI_LICENSE_PLATE",
+        "coordinates": {
+            "x1": 1278,
+            "y1": 852,
+            "x2": 1569,
+            "y2": 996
+        },
+        "image_path": "1_resized.jpg"
+    }
+]
