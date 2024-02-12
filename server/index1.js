@@ -61,7 +61,7 @@ app.post('/processImage', upload.single('image'), (req, res) => {
     fs.writeFileSync(tempImagePath, imageBuffer);
   
     // Full path to your Python script
-    const pythonScriptPath = path.join(__dirname, 'character_recognition_model', 'image_detection', 'py_codes', 'predict_text_image_ultraNew3.py');
+    const pythonScriptPath = path.join(__dirname, 'character_recognition_model', 'image_detection', 'py_codes_2', 'predict_text_image_ultraNew4.py');
   
     // Run the Python script with the saved image path
     const pythonProcess = spawn('python', [pythonScriptPath, tempImagePath]);
@@ -102,8 +102,8 @@ app.post('/processVideo', upload.single('video'), (req, res) => {
     __dirname,
     'character_recognition_model',
     'Video_detection',
-    'py_codes',
-    'predict_text_video_ultraNew3.py'
+    'py_codes_2',
+    'predict_text_video_ultraNew4.py'
   );
 
   // Run the Python script with the saved video path

@@ -1,12 +1,22 @@
 [
     {
-        "name": "NEPALI_LICENSE_PLATE",
+        "image_name": "1.jpg",
+        "label": "NEPALI_LICENSE_PLATE",
         "coordinates": {
-            "x1": 1278,
-            "y1": 852,
-            "x2": 1569,
-            "y2": 996
-        },
-        "image_path": "1_resized.jpg"
+            "x1": 0,
+            "y1": 765,
+            "x2": 207,
+            "y2": 974
+        }
+    },
+    {
+        "image_name": "2.jpg",
+        "label": "NEPALI_LICENSE_PLATE",
+        "coordinates": {
+            "x1": 1714,
+            "y1": 910,
+            "x2": 1920,
+            "y2": 1068
+        }
     }
 ]
