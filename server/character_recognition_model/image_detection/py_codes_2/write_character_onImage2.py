@@ -77,4 +77,4 @@ if __name__ == "__main__":
     custom_font_path = os.path.join('.', 'FontUnicode.ttf')
 
     # Call the function to write characters on the target image using the custom font
-    write_characters_on_image(json_path, target_image_path, custom_font_path)
+    write_characters_on_image(json_path, target_image_path, custom_font_path) 

@@ -1,10 +1,10 @@
 # requirements.txt
 
 # General dependencies
-opencv-python==4.5.1
-ultralytics==0.0.8
+opencv-python
+ultralytics
 easyocr==1.4.1
-Pillow==8.2.0
+Pillow==9.3.0
 
 # Additional dependencies
 numpy==1.20.3
