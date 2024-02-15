@@ -1,5 +1,5 @@
 # requirements.txt
-
+#python 3.10.7
 # General dependencies
 opencv-python
 ultralytics
@@ -9,3 +9,4 @@ Pillow==9.3.0
 # Additional dependencies
 numpy==1.20.3
 subprocess-run==0.5.2
+shapely
