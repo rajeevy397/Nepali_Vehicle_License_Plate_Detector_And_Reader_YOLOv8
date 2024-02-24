@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './PredictVideo_characterModel.css';
 
 const PredictVideo_characterModel = () => {
   const [file, setFile] = useState(null);
@@ -23,23 +24,41 @@ const PredictVideo_characterModel = () => {
       console.log(result);
 
       // Set the video path in the state
-      setVideoPath(`http://localhost:5001/${result.videoPath}`);
+      const timestamp = new Date().getTime();
+      setVideoPath(`http://localhost:5001/${result.videoPath}?${timestamp}`);
     } catch (error) {
       console.error('Error uploading video:', error);
     }
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload and Process Video</button>
+    <div className="predict">
+      <div className="seasonalPrediction">
+        <div className="ses-left">
+          <span>Let's Detect </span>
+          <span>Number Plates</span>
+        </div>
+
+        <div className="ses-right">
+          <input className="user" type="file" onChange={handleFileChange} />
+          <button className="button" onClick={handleUpload}>
+            Upload and Process Video
+          </button>
+        </div>
+      </div>
 
       {/* Display the processed video if videoPath is available */}
       {videoPath && (
-        <video controls width="500" height="auto">
-          <source src={videoPath} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="output-video">
+        <div className='output'>
+
+        <span>Output:</span>
+          <video className="processedVideo" controls width="500" height="auto">
+            <source src={videoPath} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        </div>
       )}
     </div>
   );

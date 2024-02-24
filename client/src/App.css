@@ -29,6 +29,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0.05; /* Adjust the opacity of the background image */
+  z-index: -1000;
 }
 
 .button {

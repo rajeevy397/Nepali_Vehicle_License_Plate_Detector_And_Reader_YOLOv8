@@ -5,6 +5,8 @@
   min-height: 100vh;
   /* height: 100vh; */
   /* height: 100%; */
+  padding: 0.1rem 0.5rem;
+
 }
 
 .seasonalPrediction {
@@ -16,11 +18,7 @@
   /* background-color: #eaf9e7; */
 }
 
-.ses-left {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* position: relative; */
-}
+
 
 .ses-left > :nth-child(1) {
   color: var(--black);
@@ -115,8 +113,19 @@ span {
 
 .output-image {
   display: flex;
+  /* margin-top: 5rem; */
   /* margin-left: 10rem; */
-  justify-content: center;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items:center ; */
+  gap: 0.5rem;
+  /* margin-top: 2rem; */
+}
+
+.zoom-container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
 }
 
 .processedImage {
@@ -125,6 +134,10 @@ span {
   /* width: 540px; */
   height: 540px;
   box-shadow: var(--boxShadow);
+}
+
+.table{
+  margin-top: 2.2rem;
 }
 
 /* Responsive css */

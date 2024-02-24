@@ -19,19 +19,19 @@ const Navbar = () => {
               smooth={true}
               activeClass="activeClass"
             >
-              <li>Home</li>
+              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>Home</li>
             </Link>
             <Link spy={true} to="Services" smooth={true}>
-              <li>Features</li>
+              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>Features</li>
             </Link>
             {/* <Link spy={true} to="Experience" smooth={true}>
               <li>Experience</li>
             </Link> */}
             <Link spy={true} to="Portfolio" smooth={true}>
-              <li>SomeOutputs</li>
+              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>SomeOutputs</li>
             </Link>
             <Link spy={true} to="Testimonials" smooth={true}>
-              <li>Team</li>
+              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>Team</li>
             </Link>
           </ul>
         </div>
