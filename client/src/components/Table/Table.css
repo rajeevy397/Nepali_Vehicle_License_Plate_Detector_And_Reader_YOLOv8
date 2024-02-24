@@ -1,0 +1,28 @@
+.json-table {
+    width: 100%;
+  }
+  
+  .json-table table {
+    border-collapse: collapse;
+    /* width: 100%; */
+  }
+  
+  .json-table th,
+  .json-table td {
+    border: 2px solid var(--blue);
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .json-table th {
+    background-color: rgb(205, 131, 252);
+  }
+  
+  .json-table tr:nth-child(even) {
+    background-color: #e7ebf0;
+  }
+  
+  .json-table tr:hover {
+    background-color: rgb(237, 190, 247);
+  }
+  

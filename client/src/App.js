@@ -1,22 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Predict_image from './pages/Predict_image';
-import Predict_video from './pages/Predict_video';
-import Home from './pages/Home';
-import PredictVideo_characterModel from './pages/PredictVideo_characterModel';
-import PredictImage_characterModel from './pages/PredictImage_characterModel';
+import Navbar from './Components/Navbar/Navbar';
+import './App.css';
+import Intro from './Components/Intro/Intro';
+import Services from './Components/Services/Services';
+import Portfolio from './Components/Portfolio/Portfolio';
+import Testimonials from './Components/Testimonials/Testimonials';
+import Contact from './Components/Contact/Contact';
+import Footer from './Components/footer1/Footer'
+import { themeContext } from './Context';
+import { useContext } from 'react';
 
-function App() {
+const App=()=> {
+  const theme = useContext(themeContext);   
+  const darkMode = theme.state.darkMode; 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/predict_image" element={<Predict_image/>} />
-        <Route path="/predict_image_charModel" element={<PredictImage_characterModel/>} />
-        <Route path="/predict_video" element={<Predict_video/>} />
-        <Route path="/PredictVideo_characterModel" element={<PredictVideo_characterModel/>} />
-      </Routes>
-    </Router>
+    <div className="App"
+    style={{ 
+      background: darkMode ? 'black':'',
+      color:darkMode? 'white': ''
+     }}
+    >
+      <Navbar />
+      <Intro />
+      <Services />
+      <Portfolio />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
 

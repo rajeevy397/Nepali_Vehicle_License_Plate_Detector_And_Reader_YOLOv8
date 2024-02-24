@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
-import Extracted_text_table from '../components/Extracted_text_table';
+import Extracted_text_table from './../Components/Extracted_text_table';
 
 function PredictImage() {
   const [file, setFile] = React.useState(null);
@@ -39,7 +39,7 @@ function PredictImage() {
       console.log('Server Response:', response);
       setMessage(response.data.message);
 
-      // Append a timestamp or unique identifier to the URL to prevent caching
+      // Append a timestamp or unique identifier to the URL to prevent caching 
       const timestamp = new Date().getTime();
       setOutputImagePath(`${response.data.outputPath}?${timestamp}`);
 
