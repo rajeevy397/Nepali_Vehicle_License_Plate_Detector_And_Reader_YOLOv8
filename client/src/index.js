@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { ThemeProvider } from './Context.js';
 import MyRoutes from './MyRoutes.js';
 ReactDOM.render(
