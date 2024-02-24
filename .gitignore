@@ -31,7 +31,7 @@ server/images/*
 server/character_recognition_model/image_detection/images/*
 server/character_recognition_model/image_detection/outputs/combined_json_output/*
 server/character_recognition_model/image_detection/outputs/labels_output/*
-server/character_recognition_model/image_detection/outputs/output/*
+# server/character_recognition_model/image_detection/outputs/output/*
 server/character_recognition_model/image_detection/outputs/txt_output/*
 
 
