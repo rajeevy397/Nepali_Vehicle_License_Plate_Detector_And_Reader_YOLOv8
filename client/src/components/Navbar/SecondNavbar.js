@@ -1,6 +1,4 @@
 import React from 'react';
-import Toggle from '../Toggle/Toggle';
-// import './Navbar.css';
 import './SecondNavbar.css';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Logo from '../../img/Logo.png';
@@ -10,7 +8,6 @@ const SecondNavbar = () => {
     <div className="n-wrapper">
       <div className="n-left">
         <div className="n-name"><img src={Logo} alt='1.png'/></div>
-        <Toggle />
       </div>
       <div className="nav-right">
         <div className="nav-list">

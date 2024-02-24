@@ -19,19 +19,19 @@ const Navbar = () => {
               smooth={true}
               activeClass="activeClass"
             >
-              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>Home</li>
+              <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>Home</li>
             </Link>
             <Link spy={true} to="Services" smooth={true}>
-              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>Features</li>
+              <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>Features</li>
             </Link>
             {/* <Link spy={true} to="Experience" smooth={true}>
               <li>Experience</li>
             </Link> */}
             <Link spy={true} to="Portfolio" smooth={true}>
-              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>SomeOutputs</li>
+              <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>SomeOutputs</li>
             </Link>
             <Link spy={true} to="Testimonials" smooth={true}>
-              <li style={{ cursor: 'pointer', color: 'black' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = 'black'}>Team</li>
+              <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>Team</li>
             </Link>
           </ul>
         </div>
