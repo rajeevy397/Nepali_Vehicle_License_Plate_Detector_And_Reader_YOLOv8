@@ -48,41 +48,40 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.post('/processImage', upload.single('image'), (req, res) => {
-    // Create the 'temp' directory if it doesn't exist
-    const tempDir = './temp';
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir);
-    }
-  
-    // Save the received image to a temporary file
-    const imageBuffer = req.file.buffer;
-    const tempImagePath = path.join(tempDir, 'temp_image.jpg');
-  
-    fs.writeFileSync(tempImagePath, imageBuffer);
-  
-    // Full path to your Python script
-    const pythonScriptPath = path.join(__dirname, 'character_recognition_model', 'image_detection', 'py_codes_2', 'predict_text_image_ultraNew4.py');
-  
-    // Run the Python script with the saved image path
-    const pythonProcess = spawn('python', [pythonScriptPath, tempImagePath]);
-  
-    pythonProcess.stdout.on('data', (data) => {
-      console.log(`Python script output: ${data}`);
-    });
-  
-    pythonProcess.stderr.on('data', (data) => {
-      console.error(`Python script error: ${data}`);
-    });
-  
-    pythonProcess.on('close', (code) => {
-      console.log(`Python script closed with code ${code}`);
-  
-      // Send a response back to the frontend with the image path
-      const outputImagePath = 'processed/output_output_image.jpg';
-      res.json({ success: true, imagePath: outputImagePath });
-    });
+  // Create the 'temp' directory if it doesn't exist
+  const tempDir = './temp';
+  if (!fs.existsSync(tempDir)) {
+    fs.mkdirSync(tempDir);
+  }
+
+  // Save the received image to a temporary file
+  const imageBuffer = req.file.buffer;
+  const tempImagePath = path.join(tempDir, 'temp_image.jpg');
+
+  fs.writeFileSync(tempImagePath, imageBuffer);
+
+  // Full path to your Python script
+  const pythonScriptPath = path.join(__dirname, 'character_recognition_model', 'image_detection', 'py_codes_2', 'predict_text_image_ultraNew4.py');
+
+  // Run the Python script with the saved image path
+  const pythonProcess = spawn('python', [pythonScriptPath, tempImagePath]); 
+
+  pythonProcess.stdout.on('data', (data) => {
+    console.log(`Python script output: ${data}`);
   });
 
+  pythonProcess.stderr.on('data', (data) => {
+    console.error(`Python script error: ${data}`);
+  });
+
+  pythonProcess.on('close', (code) => {
+    console.log(`Python script closed with code ${code}`);
+
+    // Send a response back to the frontend with the image path
+    const outputImagePath = 'processed/output_output_image.jpg';
+    res.json({ success: true, imagePath: outputImagePath });
+  });
+});
 
 app.post('/processVideo', upload.single('video'), (req, res) => {
   // Create the 'temp' directory if it doesn't exist
@@ -98,13 +97,7 @@ app.post('/processVideo', upload.single('video'), (req, res) => {
   fs.writeFileSync(tempVideoPath, videoBuffer);
 
   // Full path to your Python script for video processing
-  const pythonScriptPath = path.join(
-    __dirname,
-    'character_recognition_model',
-    'Video_detection',
-    'py_codes_2',
-    'predict_text_video_ultraNew4.py'
-  );
+  const pythonScriptPath = path.join(__dirname, 'character_recognition_model', 'Video_detection', 'py_codes_2', 'predict_text_video_ultraNew4.py');
 
   // Run the Python script with the saved video path
   const pythonProcess = spawn('python', [pythonScriptPath, tempVideoPath]);
@@ -121,8 +114,26 @@ app.post('/processVideo', upload.single('video'), (req, res) => {
     console.log(`Python script closed with code ${code}`);
 
     // Send a response back to the frontend with the video path
-    const outputVideoPath = 'processed//output_compatible.mp4';
+    const outputVideoPath = 'processed/output_compatible.mp4';
     res.json({ success: true, videoPath: outputVideoPath });
+  });
+});
+
+app.get('/jsondata', (req, res) => {
+  // Read the JSON file
+  fs.readFile(path.join(__dirname, 'character_recognition_model', 'image_detection', 'outputs', 'combined_json_output', 'combined_data.json'), (err, data) => {
+    if (err) {
+      console.error('Error reading JSON file:', err);
+      res.status(500).json({ error: 'Failed to read JSON file' });
+    } else {
+      try {
+        const jsonData = JSON.parse(data);
+        res.json(jsonData);
+      } catch (error) {
+        console.error('Error parsing JSON data:', error);
+        res.status(500).json({ error: 'Failed to parse JSON data' });
+      }
+    }
   });
 });
 
