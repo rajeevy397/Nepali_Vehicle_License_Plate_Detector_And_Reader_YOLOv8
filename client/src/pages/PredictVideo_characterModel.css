@@ -1,0 +1,179 @@
+.predict {
+    /* display: flex; */
+    /* flex-direction: column; */
+    background-color: #eaf9e7;
+    min-height: 100vh;
+    /* height: 100vh; */
+    /* height: 100%; */
+    padding: 0.1rem 0.5rem;
+  
+  }
+  
+  .seasonalPrediction {
+    padding: 1rem 3rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    overflow: hidden;
+    /* background-color: #eaf9e7; */
+  }
+  
+  
+  
+  .ses-left > :nth-child(1) {
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10rem;
+  }
+  
+  .ses-left > :nth-child(2) {
+    color: var(--blue);
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .ses-right {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 2px solid var(--blue); */
+    margin-left: 10rem;
+    margin-bottom: 2rem;
+    /* box-shadow: var(--boxShadow); */
+    border-radius: 20px;
+  }
+  
+  label {
+    font-size: 15px;
+    color: red;
+  }
+  
+  span {
+    margin-top: 1rem;
+  }
+  
+  .first {
+    margin-top: 1rem;
+  }
+  
+  .ses-right .user {
+    /* width: 20rem; */
+    /* height: 2rem; */
+    padding: 0.3em;
+    outline: none;
+    margin-left: 5px;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    margin-right: 5px;
+    /* border: 2px solid var(--blue); */
+    /* border-radius: 8px; */
+    /* font-size: 16px; */
+    /* margin-bottom: 1rem; */
+  }
+  
+  .last {
+    margin-bottom: 1rem;
+  }
+  
+  .pre-result {
+    width: 20rem;
+    height: 2rem;
+    padding: 0.3em;
+    outline: none;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    /* margin-left: 25rem; */
+  }
+  .plant {
+    color: red;
+  }
+  
+  .plantDescription {
+    width: 20rem;
+    height: 8rem;
+    padding: 0.3em;
+    outline: none;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    margin-left: 5rem;
+  }
+  
+  .p-desc {
+    margin-left: 7rem;
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+  
+  .output-video {
+    display: flex;
+    /* margin-top: 5rem; */
+    /* margin-left: 10rem; */
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items:center ; */
+    gap: 0.5rem;
+    /* margin-top: 2rem; */
+  }
+
+  .output{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .zoom-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+  }
+  
+  .processedVideo {
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    width: 1080px;
+    height: 540px;
+    box-shadow: var(--boxShadow);
+  }
+  
+  .table{
+    margin-top: 2.2rem;
+  }
+  
+  /* Responsive css */
+  @media (max-width: 570px) {
+    .seasonalPrediction {
+      padding: 0;
+      flex-direction: column;
+      gap: 5rem;
+      height: 70rem;
+    }
+  
+    .ses-left {
+      margin-top: -8rem;
+    }
+    .ses-right {
+      margin-left: -0rem;
+    }
+    .ses-right .user {
+      width: 18rem;
+      height: 2rem;
+    }
+  
+    .container1:before {
+      bottom: 72%;
+      left: 50%;
+    }
+  
+    .container1.sign-up-mode:before {
+      bottom: 28%;
+      left: 50%;
+    }
+  }
+  

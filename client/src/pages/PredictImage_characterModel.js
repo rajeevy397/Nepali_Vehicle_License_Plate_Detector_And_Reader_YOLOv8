@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PredictImage_characterModel.css';
 import JsonTable from '../Components/Table/Table';
+import SecondNavbar from '../Components/Navbar/SecondNavbar';
 
 const PredictImage_characterModel = () => {
   const [file, setFile] = useState(null);
@@ -83,10 +84,11 @@ const PredictImage_characterModel = () => {
 
   return (
     <div className="predict">
+    <SecondNavbar/>
       <div className="seasonalPrediction">
         <div className="ses-left">
-          <span>Make a </span>
-          <span>prediction</span>
+          <span>Let's Detect </span>
+          <span>Number Plates</span>
         </div>
 
         <div className="ses-right">
@@ -102,26 +104,27 @@ const PredictImage_characterModel = () => {
       </div>
 
       {imagePath && (
-        <div className="output-image" style={{ position: 'relative' }}>
-          <JsonTable jsonData={jsonData} />
+        <div className="output-image">
           <div
             className="zoom-container"
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
+            <span>Output:</span>
             <img
               className="processedImage"
               src={imagePath}
               alt="Processed Image"
               // style={{ maxWidth: '100%' }}
             />
+
             {isZoomed && (
               <div
                 className="zoomed-area"
                 style={{
                   position: 'absolute',
-                  top: 0,
+                  top: 200,
                   left: 800,
                   width: '200px',
                   height: '200px',
@@ -132,6 +135,10 @@ const PredictImage_characterModel = () => {
                 }}
               />
             )}
+          </div>
+          <div className='table'>
+          {/* <span>Detected Number Plate Text Table</span> */}
+          <JsonTable jsonData={jsonData} />
           </div>
           {/* {prediction && <div className="prediction">{prediction}</div>} */}
         </div>
