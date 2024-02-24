@@ -1,22 +1,31 @@
 {
-  "name": "client",
+  "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
+    "@emailjs/browser": "^3.10.0",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@iconscout/react-unicons": "^1.1.6",
+    "@iconscout/unicons": "^4.0.8",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.6.2",
+    "emailjs": "^4.0.1",
+    "framer-motion": "^8.2.4",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
-    "react-player": "^2.14.0",
-    "react-router-dom": "^6.20.1",
+    "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "react-table": "^7.8.0",
+    "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +48,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.75.0"
   }
 }
