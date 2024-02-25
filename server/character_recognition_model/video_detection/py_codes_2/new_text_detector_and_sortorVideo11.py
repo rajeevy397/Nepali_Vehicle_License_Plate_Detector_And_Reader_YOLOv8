@@ -86,10 +86,11 @@ for filename in os.listdir(IMAGES_DIR):
         labels_with_upper_lines_sorted = sorted(labels_with_upper_lines, key=lambda x: x[1])
         labels_with_bottom_lines_sorted = sorted(labels_with_bottom_lines, key=lambda x: x[1])
         labels_with_no_lines = [x for x in detected_labels if x not in labels_with_upper_lines + labels_with_bottom_lines]
+        labels_with_no_lines_sorted = sorted(labels_with_no_lines, key=lambda x: x[1])
         json_data = {
             "image_name": filename,
             "NumberPlateText": "".join([label[0] for label in labels_with_upper_lines_sorted]) + " " + "".join(
-                [label[0] for label in labels_with_no_lines]) + " " + "".join(
+                [label[0] for label in labels_with_no_lines_sorted]) + " " + "".join(
                 [label[0] for label in labels_with_bottom_lines_sorted])
         }
 
