@@ -53,7 +53,7 @@ const PredictVideo_characterModel = () => {
         <div className='output'>
 
         <span>Output:</span>
-          <video className="processedVideo" controls width="500" height="auto">
+          <video className="processedVideo" controls width="700" height="auto">
             <source src={videoPath} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
