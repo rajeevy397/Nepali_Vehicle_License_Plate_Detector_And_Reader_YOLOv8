@@ -28,18 +28,18 @@ server/temp/*
 server/images/*
 
 #ignore image detection outputs to be pushed
-server/character_recognition_model/image_detection/images/*
-server/character_recognition_model/image_detection/outputs/combined_json_output/*
-server/character_recognition_model/image_detection/outputs/labels_output/*
-server/character_recognition_model/image_detection/outputs/output/*
-server/character_recognition_model/image_detection/outputs/txt_output/*
+# server/character_recognition_model/image_detection/images/*
+# server/character_recognition_model/image_detection/outputs/combined_json_output/*
+# server/character_recognition_model/image_detection/outputs/labels_output/*
+# server/character_recognition_model/image_detection/outputs/output/*
+# server/character_recognition_model/image_detection/outputs/txt_output/*
 
 
 #ignore video detection outputs to be pushed
-server/character_recognition_model/video_detection/videos/*
-server/character_recognition_model/video_detection/outputs/combined_json_output/*
-server/character_recognition_model/video_detection/outputs/frames/*
-server/character_recognition_model/video_detection/outputs/frames_output/*
-server/character_recognition_model/video_detection/outputs/labels_output/*
-server/character_recognition_model/video_detection/outputs/output/*
-server/character_recognition_model/video_detection/outputs/video_output/*
+# server/character_recognition_model/video_detection/videos/*
+# server/character_recognition_model/video_detection/outputs/combined_json_output/*
+# server/character_recognition_model/video_detection/outputs/frames/*
+# server/character_recognition_model/video_detection/outputs/frames_output/*
+# server/character_recognition_model/video_detection/outputs/labels_output/*
+# server/character_recognition_model/video_detection/outputs/output/*
+# server/character_recognition_model/video_detection/outputs/video_output/*
