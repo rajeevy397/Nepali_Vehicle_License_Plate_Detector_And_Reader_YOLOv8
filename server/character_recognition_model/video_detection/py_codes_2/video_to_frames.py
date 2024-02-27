@@ -63,5 +63,7 @@ if __name__ == "__main__":
     '.', 'character_recognition_model', 'video_detection')
     output_folder = os.path.join(PATH, 'outputs', 'frames')
     frames_output_folder = os.path.join(PATH, 'outputs', 'frames_output')
+    if not os.path.exists(frames_output_folder):
+        os.makedirs(frames_output_folder)
 
     extract_frames(video_path, output_folder, frames_output_folder)

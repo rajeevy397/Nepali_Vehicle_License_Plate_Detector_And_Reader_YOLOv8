@@ -7,7 +7,7 @@ from ultralytics import YOLO
 
 
 if len(sys.argv) != 2:
-    print("Usage: python predict_text_image_ultraNew4.py <image_path>")
+    print("Usage: python predict_text_image_ultraNew4.py <image_path>") 
     sys.exit(1)
 
 image_path = sys.argv[1]
@@ -17,6 +17,10 @@ PATH = os.path.join(
     '.', 'character_recognition_model', 'image_detection', 'outputs') 
 
 output_folder = os.path.join(PATH, 'output')
+
+#create folder if dont exist
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
 # Load a model
 model_path = os.path.join('.', 'models', 'NumberPlateDetector.pt')
