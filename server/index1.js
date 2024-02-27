@@ -71,7 +71,7 @@ app.post('/processImage', upload.single('image'), (req, res) => {
   });
 
   pythonProcess.stderr.on('data', (data) => {
-    console.error(`Python script error: ${data}`);
+    console.error(`Python script Running: ${data}`);
   });
 
   pythonProcess.on('close', (code) => {
@@ -107,7 +107,7 @@ app.post('/processVideo', upload.single('video'), (req, res) => {
   });
 
   pythonProcess.stderr.on('data', (data) => {
-    console.error(`Python script error: ${data}`);
+    console.error(`Python script Running: ${data}`);
   });
 
   pythonProcess.on('close', (code) => {

@@ -40,13 +40,13 @@ output_image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 draw = ImageDraw.Draw(output_image)
 
 # Font settings for drawing label
-label_font_path = "FontUnicode.ttf"  # Replace with your label font file
+label_font_path = os.path.join('.', 'fonts', 'FontUnicode.ttf')  # Replace with your label font file
 label_font_size = 28  # Adjust the font size as needed
 label_font = ImageFont.truetype(label_font_path, label_font_size)
 label_text_fill = "white"
 
 # Font settings for drawing Unicode text
-unicode_font_path = "FontUnicode.ttf"  # Replace with your Unicode font file
+unicode_font_path = "os.path.join('.', 'fonts', 'FontUnicode.ttf')"  # Replace with your Unicode font file
 unicode_font_size = 70  # Adjust the font size as needed
 unicode_font = ImageFont.truetype(unicode_font_path, unicode_font_size)
 unicode_text_fill = "red"

@@ -5,16 +5,13 @@ import json
 import subprocess
 from ultralytics import YOLO
 
-
 if len(sys.argv) != 2:
     print("Usage: python predict_text_image_ultraNew4.py <image_path>") 
     sys.exit(1)
 
 image_path = sys.argv[1]
-# image_path = os.path.join(IMAGES_DIR, 'frame_0058.png')
 
-PATH = os.path.join(
-    '.', 'character_recognition_model', 'image_detection', 'outputs') 
+PATH = os.path.join('.', 'character_recognition_model', 'image_detection', 'outputs') 
 
 output_folder = os.path.join(PATH, 'output')
 
@@ -80,9 +77,37 @@ for idx, result in enumerate(results.boxes.data.tolist()):
             })
 
             # Draw bounding box on the original image
-            cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 4)
-            cv2.putText(image, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)),
-                        cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 3, cv2.LINE_AA)
+            cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 3)
+            
+            # Define text properties
+            # label_text = results.names[int(class_id)].upper()
+            label_text = 'Nepali Number plate'
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            font_scale = 1
+            font_thickness = 3
+            text_size = cv2.getTextSize(label_text, font, font_scale, font_thickness)[0]
+            
+            # Calculate position for the text
+            text_x = int(x1 + (x2 - x1) / 2 - text_size[0] / 2)
+            text_y = int(y2 + text_size[1] + 10)  # Place text below the bounding box
+            
+            # Check if text exceeds image boundaries and adjust accordingly
+            if text_x < 0:
+                text_x = 0
+            elif text_x + text_size[0] > W:
+                text_x = W - text_size[0]
+                
+            if text_y < 0:
+                text_y = 0
+            elif text_y + text_size[1] > H:
+                text_y = H - text_size[1]
+            
+            # Draw the text background
+            cv2.rectangle(image, (text_x - 5, text_y - text_size[1] - 5), 
+                          (text_x + text_size[0] + 5, text_y + 5), (0, 0, 255), -1)
+            
+            # Draw the label text
+            cv2.putText(image, label_text, (text_x, text_y), font, font_scale, (255, 255, 255), font_thickness, cv2.LINE_AA)
 
 # Save the original image with bounding boxes
 output_image_path = os.path.join(output_folder, 'output_image.jpg')
@@ -98,8 +123,7 @@ print(f"Original image with bounding boxes saved at: {output_image_path}")
 
 
 # Run other scripts serially
-py_codes_path = os.path.join(
-    '.','character_recognition_model', 'image_detection', 'py_codes_2')
+py_codes_path = os.path.join('.', 'character_recognition_model', 'image_detection', 'py_codes_2')
 subprocess.run(['python', os.path.join(py_codes_path,'new_text_detector_and_sortor11.py')])
-subprocess.run(['python',os.path.join(py_codes_path,'json_combiner2.py')])
-subprocess.run(['python',os.path.join(py_codes_path,'write_character_onImage2.py')])
+subprocess.run(['python', os.path.join(py_codes_path,'json_combiner2.py')])
+subprocess.run(['python', os.path.join(py_codes_path,'write_character_onImage2.py')])

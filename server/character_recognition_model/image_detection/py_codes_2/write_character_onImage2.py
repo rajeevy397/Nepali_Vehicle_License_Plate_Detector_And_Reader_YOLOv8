@@ -10,8 +10,8 @@ def write_characters_on_image(json_path, target_image_path, custom_font_path):
     image_width, image_height = image.size
     
     # Load the custom font
-    font_size = 50  # Adjust the font size as needed
-    font_color = "red"  # Change the font color as needed
+    font_size = 70  # Adjust the font size as needed
+    font_color = "white"  # Change the font color as needed
     font = ImageFont.truetype(custom_font_path, size=font_size)
 
     with open(json_path, "r") as json_file:
@@ -50,7 +50,7 @@ def write_characters_on_image(json_path, target_image_path, custom_font_path):
                 box_y2 = box_y1 + box_height
 
                 # Draw the white background
-                draw.rectangle([box_x1, box_y1, box_x2, box_y2], fill="white")
+                draw.rectangle([box_x1, box_y1, box_x2, box_y2], fill="red")
 
                 # Write characters above the box with the specified font size and color
                 text_x = center_x - text_width // 2
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     target_image_path = os.path.join(PATH,'output', 'output_image.jpg')
     
     # Specify the path of the custom font
-    custom_font_path = os.path.join('.', 'fonts', 'FontUnicode.ttf')
+    custom_font_path = os.path.join('.', 'fonts', 'OldFontUnicode.ttf')
 
     # Call the function to write characters on the target image using the custom font
     write_characters_on_image(json_path, target_image_path, custom_font_path) 

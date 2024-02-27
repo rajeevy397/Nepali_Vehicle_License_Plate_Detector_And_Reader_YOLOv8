@@ -94,7 +94,7 @@ const PredictImage_characterModel = () => {
         <div className="ses-right">
           <input className="user" type="file" onChange={handleFileChange} />
           <button
-            className="button"
+            className={`button${processing ? ' disabled' : ''}`}
             onClick={handleUpload}
             disabled={processing}
           >

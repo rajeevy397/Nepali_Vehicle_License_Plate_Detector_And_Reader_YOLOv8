@@ -146,6 +146,11 @@
     margin-top: 2.2rem;
   }
   
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
   /* Responsive css */
   @media (max-width: 570px) {
     .seasonalPrediction {
