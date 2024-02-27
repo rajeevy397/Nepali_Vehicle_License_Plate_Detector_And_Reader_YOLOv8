@@ -20,7 +20,7 @@ output_folder = os.path.join(PATH, 'output')
 # image_path = os.path.join('.', 'server', 'character_recognition_model', 'image_detection','images','2964.jpg')
 
 # Load a model
-model_path = os.path.join('.', 'model_training', 'Nepali_License_Plate_Detection_System_YOLOv8','runs', 'detect', 'train', 'weights', 'best.pt')
+model_path = os.path.join('.', 'models', 'NumberPlateDetector.pt')
 
 model = YOLO(model_path)
 

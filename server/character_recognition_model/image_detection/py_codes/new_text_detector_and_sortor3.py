@@ -10,7 +10,7 @@ OUTPUT_DIR = os.path.join('.','character_recognition_model','image_detection' ,'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Load the model
-model_path = os.path.join('.', 'character2.pt')
+model_path = os.path.join('.', 'models', 'characterRecognizer.pt')
 model = YOLO(model_path)
 
 # Delete files inside the output folder before saving new output

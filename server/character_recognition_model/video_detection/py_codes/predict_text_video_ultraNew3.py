@@ -23,7 +23,7 @@ output_folder = os.path.join(PATH, 'output')
 input_images_folder = os.path.join(PATH, 'frames')
 
 # Load a model
-model_path = os.path.join('.', 'model_training', 'Nepali_License_Plate_Detection_System_YOLOv8','runs', 'detect', 'train', 'weights', 'best.pt')
+model_path = os.path.join('.', 'models', 'NumberPlateDetector.pt')
 model = YOLO(model_path)
 
 # Get a list of image files and sort them based on their names

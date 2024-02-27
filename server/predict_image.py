@@ -15,8 +15,7 @@ image_path = sys.argv[1]
 IMAGES_DIR = os.path.join('.', 'output')
 
 # Load a YOLO model
-model_path = os.path.join('.', 'model_training', 'Nepali_License_Plate_Detection_System_YOLOv8',
-                          'runs', 'detect', 'train', 'weights', 'best.pt')
+model_path = os.path.join('.', 'models', 'NumberPlateDetector.pt')
 model = YOLO(model_path)
 
 # Read the image

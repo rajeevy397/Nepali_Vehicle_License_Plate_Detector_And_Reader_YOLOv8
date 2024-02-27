@@ -62,7 +62,7 @@ if __name__ == "__main__":
     target_image_path = os.path.join(PATH,'output','output_image.jpg')
     
     # Specify the path of the custom font
-    custom_font_path =os.path.join('.','FontUnicode.ttf')
+    custom_font_path =os.path.join('.', 'fonts', 'FontUnicode.ttf')
 
     # Specify the output folder
     output_folder = os.path.join(PATH, 'frames_output')

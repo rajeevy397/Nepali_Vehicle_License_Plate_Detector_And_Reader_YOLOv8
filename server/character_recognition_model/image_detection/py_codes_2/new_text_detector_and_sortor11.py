@@ -12,7 +12,7 @@ OUTPUT_DIR = os.path.join('.','character_recognition_model','image_detection' ,'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Load the YOLO model
-model_path = os.path.join('.', 'best.pt')
+model_path = os.path.join('.', 'models', 'characterRecognizer.pt')
 model = YOLO(model_path)
 
 # Delete files inside the output folder before saving new output
@@ -25,7 +25,7 @@ for file_name in os.listdir(OUTPUT_DIR):
         print(f"Error deleting file {file_path}: {e}")
 
 # Set threshold
-threshold = 0.5
+threshold = 0.1
 
 # Dictionary to store JSON data for each image
 json_data_all = {}

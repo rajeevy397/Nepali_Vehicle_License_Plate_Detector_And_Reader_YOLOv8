@@ -1,5 +1,0 @@
-train: data/train/images
-val: data/train/images
-
-nc: 1
-names: ['Nepali_License_Plate']
