@@ -6,7 +6,7 @@
     position: fixed;
     z-index: 9999;
     background: #eaf9e7;
-    max-width: 99.5vw;
+    max-width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: center;
