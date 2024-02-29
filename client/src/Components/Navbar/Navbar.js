@@ -1,16 +1,19 @@
-import React from 'react';
+import {React, useContext} from 'react';
 import Toggle from '../Toggle/Toggle';
+import { themeContext } from '../../Context';
 import './Navbar.css';
 import { Link } from 'react-scroll'; 
 import Logo from '../../img/Logo.png';
 const Navbar = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
   const handleHomeClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="n-wrapper">
+    <div className="n-wrapper" style={{ background: darkMode ? 'black' : '', boxShadow: darkMode?'0 0px 10px rgba(234, 249, 231, 0.5)':''}} >
       <div className="n-left">
         <div className="n-name"><img src={Logo} alt='1.png'/></div>
         <Toggle />
