@@ -1,6 +1,7 @@
 # requirements.txt
 #python 3.10.7
 # General dependencies
+#rajkishor
 opencv-python
 ultralytics
 easyocr==1.4.1
