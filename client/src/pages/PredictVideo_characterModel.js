@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import './PredictVideo_characterModel.css';
 import { ImageConfig } from '../ImageConfig';
 import SecondNavbar from '../Components/Navbar/SecondNavbar';
 import uploadImg from "../img/upload.png"
 
 const PredictVideo_characterModel = () => {
+  const fileInputRef = useRef(null);
+
   const [file, setFile] = useState(null);
   const [videoPath, setVideoPath] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    // setFile(event.target.files[0]);
+    const fileList = event.target.files || event.dataTransfer.files;
+    if (fileList.length > 0) {
+      setFile(fileList[0]);
+    }
   };
 
   const handleUpload = async () => {
@@ -94,12 +100,26 @@ const PredictVideo_characterModel = () => {
           
         ):(
           
-          <div  className="drop_file_input">
+          <div  className="drop_file_input"
+          onDragOver={(e) => {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+          }}
+          onDragLeave={(e) => {
+            e.currentTarget.classList.remove('dragover');
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+        
+            handleFileChange(e);
+          }}
+          >
             <label htmlFor="fileInput"  className="drop_file_input_label">
               <img src={uploadImg} alt="" />
               <p>Upload your video file here</p>
             </label>
-            <input id="fileInput" className="user" type="file" onChange={handleFileChange} />
+            <input id="fileInput" className="user" type="file" onChange={handleFileChange} ref={fileInputRef}/>
           </div>
           
         )}

@@ -66,6 +66,11 @@ max-height: 25vh;
 display: none;
 }
 
+.dragover{
+  opacity: 0.6;
+}
+
+
 .drop_file_input:hover {
   opacity: 0.6;
 }

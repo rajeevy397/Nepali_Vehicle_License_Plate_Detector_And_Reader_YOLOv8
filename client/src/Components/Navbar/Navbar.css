@@ -1,55 +1,76 @@
 .n-wrapper {
+  /* border: 5px solid red; */
     top:0;
     left: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
     z-index: 9999;
     background: #eaf9e7;
-    width: 100vw;
+    max-width: 99.5vw;
     height: 10vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
   
   .n-left {
-    flex: 1;
+    /* border: 5px solid black; */
     align-items: center;
     display: flex;
-    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
   }
+  
   .n-name {
+    margin-left: 40px;
     display: flex;
     justify-content: center;
   }
   
   .n-name img {
-    height: 50px;
     width: 50px;
+    aspect-ratio: 1/1;
   }
-  
-  .n-right {
+  .n-middle{
+    /* border: 5px solid blue; */
     display: flex;
     flex: 1;
-    align-items: center;
     justify-content: center;
-    font-weight: 400;
+    align-items: center;
   }
   
+  
+  
   .n-list {
-    flex: 10;
+   /* border: 5px solid green; */
+   display: flex;
+   flex: 1;
+   justify-content: center;
+   align-items: center;
+   
   }
   
   .n-list > ul {
+    /* border: 2px solid red; */
+    list-style: none;
     display: flex;
+    justify-content: flex-end;
+    flex: 1;
     gap: 2rem;
-    margin-right: 4rem;
     cursor: pointer;
   }
   
   
+  .n-right {
+    /* border: 5px solid yellowgreen; */
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+  }
   
   .n-button {
-    flex: 2;
+    margin-right: 40px;
   }
   
   @media screen and (max-width: 480px) {

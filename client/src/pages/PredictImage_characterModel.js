@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 
 import './PredictImage_characterModel.css';
 import JsonTable from '../Components/Table/Table';
@@ -8,6 +8,7 @@ import uploadImg from '../img/upload.png'
 import { ImageConfig } from '../ImageConfig';
 
 const PredictImage_characterModel = () => {
+  const fileInputRef = useRef(null);
   const [file, setFile] = useState(null);
   const [imagePath, setImagePath] = useState(null);
   // const [prediction, setPrediction] = useState(null);
@@ -42,7 +43,11 @@ const PredictImage_characterModel = () => {
   }, []); // Fetch JSON data on component mount
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    // setFile(event.target.files[0]);
+    const fileList = event.target.files || event.dataTransfer.files;
+    if (fileList.length > 0) {
+      setFile(fileList[0]);
+    }
   };
 
 
@@ -143,12 +148,26 @@ const PredictImage_characterModel = () => {
           
         ):(
           
-          <div  className="drop_file_input">
+          <div  className="drop_file_input"
+          onDragOver={(e) => {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+          }}
+          onDragLeave={(e) => {
+            e.currentTarget.classList.remove('dragover');
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+        
+            handleFileChange(e);
+          }}
+          >
             <label htmlFor="fileInput"  className="drop_file_input_label">
               <img src={uploadImg} alt="" />
               <p>Upload your files here</p>
             </label>
-            <input id="fileInput" className="user" type="file" onChange={handleFileChange} />
+            <input id="fileInput" className="user" type="file" onChange={handleFileChange} ref={fileInputRef} />
           </div>
           
         )}

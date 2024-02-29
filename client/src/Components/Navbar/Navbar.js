@@ -15,9 +15,9 @@ const Navbar = () => {
         <div className="n-name"><img src={Logo} alt='1.png'/></div>
         <Toggle />
       </div>
-      <div className="n-right">
+      <div className="n-middle">
         <div className="n-list">
-          <ul style={{ listStyleType: 'none' }}>
+          <ul>
             <Link
               spy={true}
               to="Navbar"
@@ -29,9 +29,6 @@ const Navbar = () => {
             <Link spy={true} to="Services" smooth={true}>
               <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>Features</li>
             </Link>
-            {/* <Link spy={true} to="Experience" smooth={true}>
-              <li>Experience</li>
-            </Link> */}
             <Link spy={true} to="Portfolio" smooth={true}>
               <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>SomeOutputs</li>
             </Link>
@@ -40,10 +37,14 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
+      </div>
+
+        <div className='n-right'>
+
         <Link spy={true} to="Contact" smooth={true}>
           <button className="button n-button">Contact</button>
         </Link>
-      </div>
+        </div>
     </div>
   );
 };
