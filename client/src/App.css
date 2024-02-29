@@ -1,3 +1,7 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --yellow: #f5c32c;
   --orange: #fca61f;

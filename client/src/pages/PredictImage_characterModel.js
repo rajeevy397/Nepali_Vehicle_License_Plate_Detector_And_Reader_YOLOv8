@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, } from 'react';
+
 import './PredictImage_characterModel.css';
 import JsonTable from '../Components/Table/Table';
 import SecondNavbar from '../Components/Navbar/SecondNavbar';
+import './predict_image.css'
+import uploadImg from '../img/upload.png'
+import { ImageConfig } from '../ImageConfig';
 
 const PredictImage_characterModel = () => {
   const [file, setFile] = useState(null);
@@ -11,6 +15,7 @@ const PredictImage_characterModel = () => {
   const [jsonData, setJsonData] = useState(null);
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
   const [isZoomed, setIsZoomed] = useState(false);
+ 
 
   // Function to fetch JSON data from the server
   const fetchJsonData = async () => {
@@ -39,6 +44,7 @@ const PredictImage_characterModel = () => {
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
+
 
   const handleUpload = async () => {
     setProcessing(true);
@@ -83,24 +89,70 @@ const PredictImage_characterModel = () => {
   };
 
   return (
+    <>
+
     <div className="predict">
-    <SecondNavbar/>
+    <SecondNavbar />
       <div className="seasonalPrediction">
         <div className="ses-left">
           <span>Let's Detect </span>
           <span>Number Plates</span>
         </div>
 
-        <div className="ses-right">
-          <input className="user" type="file" onChange={handleFileChange} />
-          <button
-            className={`button${processing ? ' disabled' : ''}`}
-            onClick={handleUpload}
-            disabled={processing}
-          >
-            {processing ? 'processing...' : 'Upload and Process Image'}
-          </button>
-        </div>
+        <div className='ses-right'>
+
+
+        {file ? (
+        <>
+
+          <div className='drop_file_preview'>
+            
+
+              <div className = "drop_file_preview_item">
+                <div className='image'>
+                  <img
+                        src={
+                          ImageConfig[file.name.split('.').pop().toLowerCase()]
+                        }
+                       alt=""
+                  />
+                </div>
+                <div className="drop_file_preview_item_info">
+
+                  <div style={{ marginBottom: '-10px' }}>
+                  <p>{file.name}</p>
+                  </div>
+                  <div style={{ marginTop: '-10px' }}>
+                  <p>{file.size}B</p>
+                  </div>
+                  
+                </div>
+              </div>
+          
+              <button
+              style={{borderRadius:'5px',marginRight:'20px'}}
+                className={`button${processing ? ' disabled' : ''}`}
+                onClick={handleUpload}
+                disabled={processing}
+              >
+                {processing ? 'Processing...' : 'Upload'}
+              </button>
+            
+          </div>
+        </>
+          
+        ):(
+          
+          <div  className="drop_file_input">
+            <label htmlFor="fileInput"  className="drop_file_input_label">
+              <img src={uploadImg} alt="" />
+              <p>Upload your files here</p>
+            </label>
+            <input id="fileInput" className="user" type="file" onChange={handleFileChange} />
+          </div>
+          
+        )}
+          </div>
       </div>
 
       {imagePath && (
@@ -115,7 +167,7 @@ const PredictImage_characterModel = () => {
             <img
               className="processedImage"
               src={imagePath}
-              alt="Processed Image"
+              alt=""
               // style={{ maxWidth: '100%' }}
             />
 
@@ -144,7 +196,9 @@ const PredictImage_characterModel = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
+
 
 export default PredictImage_characterModel;

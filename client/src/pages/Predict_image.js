@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import axios from 'axios';
 import Extracted_text_table from './../Components/Extracted_text_table';
 
+
 function PredictImage() {
   const [file, setFile] = React.useState(null);
   const [uploadedImage, setUploadedImage] = React.useState(null);
@@ -56,8 +57,12 @@ function PredictImage() {
   };
 
   return (
-    <div>
+
+    <>
+  
+
       <input type="file" onChange={handleFileChange} ref={fileInputRef} />
+    
       {uploadedImage && (
         <div>
           <h2>Uploaded Image:</h2>
@@ -90,7 +95,7 @@ function PredictImage() {
 
       {/* Use the UnicodeTable component here */}
       
-    </div>
+    </>
   );
 }
 

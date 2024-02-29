@@ -4,6 +4,11 @@ import './Navbar.css';
 import { Link } from 'react-scroll'; 
 import Logo from '../../img/Logo.png';
 const Navbar = () => {
+
+  const handleHomeClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="n-wrapper">
       <div className="n-left">
@@ -19,7 +24,7 @@ const Navbar = () => {
               smooth={true}
               activeClass="activeClass"
             >
-              <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>Home</li>
+              <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'} onClick={handleHomeClick}>Home</li>
             </Link>
             <Link spy={true} to="Services" smooth={true}>
               <li style={{ cursor: 'pointer', color: '#788097' }} onMouseEnter={(e) => e.target.style.color = 'rgb(151, 16, 235)'} onMouseLeave={(e) => e.target.style.color = '#788097'}>Features</li>

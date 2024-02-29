@@ -1,4 +1,11 @@
 .n-wrapper {
+    top:0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 9999;
+    background: #eaf9e7;
+    width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;

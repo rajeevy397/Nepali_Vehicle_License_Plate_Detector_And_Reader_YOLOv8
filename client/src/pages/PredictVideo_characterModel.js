@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './PredictVideo_characterModel.css';
+import { ImageConfig } from '../ImageConfig';
+import SecondNavbar from '../Components/Navbar/SecondNavbar';
+import uploadImg from "../img/upload.png"
 
 const PredictVideo_characterModel = () => {
   const [file, setFile] = useState(null);
@@ -40,22 +43,67 @@ const PredictVideo_characterModel = () => {
 
   return (
     <div className="predict">
+      <SecondNavbar />
       <div className="seasonalPrediction">
         <div className="ses-left">
           <span>Let's Detect </span>
           <span>Number Plates</span>
         </div>
 
-        <div className="ses-right">
-          <input className="user" type="file" onChange={handleFileChange} />
-          <button
-            className={`button${isLoading ? ' disabled' : ''}`}
-            onClick={handleUpload}
-            disabled={isLoading}
-          >
-            {isLoading ? 'Processing...' : 'Upload and Process Video'}
-          </button>
-        </div>
+        <div className='ses-right'>
+
+
+        {file ? (
+        <>
+
+          <div className='drop_file_preview'>
+            
+
+              <div className = "drop_file_preview_item">
+                <div className='image'>
+                  <img
+                        src={
+                          ImageConfig[file.name.split('.').pop().toLowerCase()]
+                        }
+                       alt=""
+                  />
+                </div>
+                <div className="drop_file_preview_item_info">
+
+                  <div style={{ marginBottom: '-10px' }}>
+                  <p>{file.name}</p>
+                  </div>
+                  <div style={{ marginTop: '-10px' }}>
+                  <p>{file.size}B</p>
+                  </div>
+                  
+                </div>
+              </div>
+          
+              <button
+              style={{borderRadius:'5px',marginRight:'20px'}}
+                className={`button${isLoading ? ' disabled' : ''}`}
+                onClick={handleUpload}
+                disabled={isLoading}
+              >
+                {isLoading ? 'Processing...' : 'Upload'}
+              </button>
+            
+          </div>
+        </>
+          
+        ):(
+          
+          <div  className="drop_file_input">
+            <label htmlFor="fileInput"  className="drop_file_input_label">
+              <img src={uploadImg} alt="" />
+              <p>Upload your video file here</p>
+            </label>
+            <input id="fileInput" className="user" type="file" onChange={handleFileChange} />
+          </div>
+          
+        )}
+          </div>
       </div>
 
       {/* Display the processed video if videoPath is available */}
