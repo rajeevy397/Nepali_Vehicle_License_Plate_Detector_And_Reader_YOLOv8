@@ -7,7 +7,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 const Developer = ({ name, socialMediaLinks }) => {
   return (
     <div className="developers">
-      <span className='developer1'>{name}</span>
+      <span className='developer1'>{name}</span> 
       <div>
         <ul className="social_icons">
           {socialMediaLinks.map((link, index) => (

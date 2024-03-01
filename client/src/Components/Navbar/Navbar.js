@@ -80,6 +80,17 @@ const Navbar = () => {
                 Team
               </li>
             </Link>
+            <Link spy={true} to="Contact" smooth={true}>
+              <li
+                style={{ cursor: 'pointer', color: '#788097' }}
+                onMouseEnter={(e) =>
+                  (e.target.style.color = 'rgb(151, 16, 235)')
+                }
+                onMouseLeave={(e) => (e.target.style.color = '#788097')}
+              >
+                Contact
+              </li>
+            </Link>
           </ul>
         </div>
 

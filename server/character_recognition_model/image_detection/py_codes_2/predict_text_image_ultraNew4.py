@@ -127,3 +127,5 @@ py_codes_path = os.path.join('.', 'character_recognition_model', 'image_detectio
 subprocess.run(['python', os.path.join(py_codes_path,'new_text_detector_and_sortor11.py')])
 subprocess.run(['python', os.path.join(py_codes_path,'json_combiner2.py')])
 subprocess.run(['python', os.path.join(py_codes_path,'write_character_onImage2.py')])
+
+subprocess.run(['python', os.path.join('.','character_recognition_model', 'image_detection', 'py_codes_2','cropped_plates_py_codes','copy_files.py')])
