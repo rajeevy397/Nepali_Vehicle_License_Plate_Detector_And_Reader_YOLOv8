@@ -53,6 +53,11 @@ const PredictVideo_characterModel = () => {
     }
   };
 
+  const handleClearFile = () => {
+    // Clear the selected file
+    setFile(null);
+  };
+
   return (
     <div className="predict">
       <SecondNavbar />
@@ -82,13 +87,14 @@ const PredictVideo_characterModel = () => {
                   </div>
                 </div>
                 <button
-                  style={{ borderRadius: '5px', marginRight: '20px' }}
+                  style={{ borderRadius: '20px', marginRight: '20px' }}
                   className={`button${isLoading ? ' disabled' : ''}`}
                   onClick={handleUpload}
                   disabled={isLoading}
                 >
-                  {isLoading ? 'Processing...' : 'Upload'}
+                  {isLoading ? 'Processing...' : 'Upload & Process'}
                 </button>
+                <button className="clearButton"  onClick={handleClearFile}>x</button>
               </div>
             </>
           ) : (

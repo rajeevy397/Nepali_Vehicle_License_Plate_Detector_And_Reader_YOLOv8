@@ -21,7 +21,9 @@ const PredictImage_characterModel = () => {
   const fetchJsonData = async () => {
     try {
       const timestamp = Date.now();
-      const response = await fetch(`http://localhost:5001/jsondata?timestamp=${timestamp}`);
+      const response = await fetch(
+        `http://localhost:5001/jsondata?timestamp=${timestamp}`
+      );
       if (!response.ok) {
         throw new Error('Failed to fetch JSON data');
       }
@@ -87,6 +89,11 @@ const PredictImage_characterModel = () => {
     setIsZoomed(false);
   };
 
+  const handleClearFile = () => {
+    // Clear the selected file
+    setFile(null);
+  };
+
   return (
     <>
       <div className="predict">
@@ -99,7 +106,6 @@ const PredictImage_characterModel = () => {
           </div>
 
           <div className="ses-right">
-            
             {file ? (
               <>
                 <div className="drop_file_preview">
@@ -123,14 +129,14 @@ const PredictImage_characterModel = () => {
                   </div>
 
                   <button
-                    style={{ borderRadius: '5px', marginRight: '20px' }}
+                    style={{ borderRadius: '20px', marginRight: '20px' }}
                     className={`button${processing ? ' disabled' : ''}`}
                     onClick={handleUpload}
                     disabled={processing}
                   >
-                    {processing ? 'Processing...' : 'Upload'}
+                    {processing ? 'Processing...' : 'Upload & Process'}
                   </button>
-
+                  <button className="clearButton"  onClick={handleClearFile}>x</button>
                 </div>
               </>
             ) : (
@@ -162,7 +168,11 @@ const PredictImage_characterModel = () => {
                 />
               </div>
             )}
-            {errorMessage && <div className="error-message" style={{ color:'red' }}>{errorMessage}</div>}
+            {errorMessage && (
+              <div className="error-message" style={{ color: 'red' }}>
+                {errorMessage}
+              </div>
+            )}
           </div>
         </div>
 
@@ -175,11 +185,7 @@ const PredictImage_characterModel = () => {
               onMouseLeave={handleMouseLeave}
             >
               <span>Output:</span>
-              <img
-                className="processedImage"
-                src={imagePath}
-                alt=""
-              />
+              <img className="processedImage" src={imagePath} alt="" />
 
               {isZoomed && (
                 <div
