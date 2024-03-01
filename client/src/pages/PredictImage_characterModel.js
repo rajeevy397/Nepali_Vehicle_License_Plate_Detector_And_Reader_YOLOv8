@@ -92,6 +92,7 @@ const PredictImage_characterModel = () => {
   const handleClearFile = () => {
     // Clear the selected file
     setFile(null);
+    setImagePath(null);
   };
 
   return (

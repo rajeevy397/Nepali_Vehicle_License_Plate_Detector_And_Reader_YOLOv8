@@ -56,6 +56,7 @@ const PredictVideo_characterModel = () => {
   const handleClearFile = () => {
     // Clear the selected file
     setFile(null);
+    setVideoPath(null);
   };
 
   return (
