@@ -1,8 +1,7 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './PredictVideo_characterModel.css';
-import { ImageConfig } from '../ImageConfig';
 import SecondNavbar from '../Components/Navbar/SecondNavbar';
-import uploadImg from "../img/upload.png"
+import uploadImg from "../img/upload.png";
 
 const PredictVideo_characterModel = () => {
   const fileInputRef = useRef(null);
@@ -12,11 +11,18 @@ const PredictVideo_characterModel = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const allowedVideoTypes = ['video/mp4', 'video/mpeg', 'video/quicktime']; // Add more video MIME types if necessary
+
   const handleFileChange = (event) => {
-    // setFile(event.target.files[0]);
     const fileList = event.target.files || event.dataTransfer.files;
     if (fileList.length > 0) {
-      setFile(fileList[0]);
+      const selectedFile = fileList[0];
+      if (allowedVideoTypes.includes(selectedFile.type)) {
+        setFile(selectedFile);
+        setError(null); // Clear error message if a valid file is selected
+      } else {
+        setError('Only video files (MP4, MPEG, QuickTime) are allowed.');
+      }
     }
   };
 
@@ -51,82 +57,66 @@ const PredictVideo_characterModel = () => {
     <div className="predict">
       <SecondNavbar />
       <div className="seasonalPrediction">
-        <div className="ses-left">
+        <div className="s-left">
           <span>Let's Detect </span>
           <span>Number Plates</span>
+          <span>in Video</span>
         </div>
 
         <div className='ses-right'>
-
-
-        {file ? (
-        <>
-
-          <div className='drop_file_preview'>
-            
-
-              <div className = "drop_file_preview_item">
-                <div className='image'>
-                  <img
-                        src={
-                          ImageConfig[file.name.split('.').pop().toLowerCase()]
-                        }
-                       alt=""
-                  />
-                </div>
-                <div className="drop_file_preview_item_info">
-
-                  <div style={{ marginBottom: '-10px' }}>
-                  <p>{file.name}</p>
-                  </div>
-                  <div style={{ marginTop: '-10px' }}>
-                  <p>{file.size}B</p>
-                  </div>
-                  
-                </div>
-              </div>
-          
-              <button
-              style={{borderRadius:'5px',marginRight:'20px'}}
-                className={`button${isLoading ? ' disabled' : ''}`}
-                onClick={handleUpload}
-                disabled={isLoading}
-              >
-                {isLoading ? 'Processing...' : 'Upload'}
-              </button>
-            
-          </div>
-        </>
-          
-        ):(
-          
-          <div  className="drop_file_input"
-          onDragOver={(e) => {
-            e.preventDefault();
-            e.currentTarget.classList.add('dragover');
-          }}
-          onDragLeave={(e) => {
-            e.currentTarget.classList.remove('dragover');
-          }}
-          onDrop={(e) => {
-            e.preventDefault();
-            e.currentTarget.classList.remove('dragover');
         
-            handleFileChange(e);
-          }}
-          >
-            <label htmlFor="fileInput"  className="drop_file_input_label">
-              <img src={uploadImg} alt="" />
-              <p>Upload your video file here</p>
-            </label>
-            <input id="fileInput" className="user" type="file" onChange={handleFileChange} ref={fileInputRef}/>
-          </div>
-          
-        )}
-          </div>
+          {file ? (
+            <>
+              <div className='drop_file_preview'>
+                <div className="drop_file_preview_item">
+                  <div className='image'>
+                    <img src={uploadImg} alt="" />
+                  </div>
+                  <div className="drop_file_preview_item_info">
+                    <div style={{ marginBottom: '-10px' }}>
+                      <p>{file.name}</p>
+                    </div>
+                    <div style={{ marginTop: '-10px' }}>
+                      <p>{file.size}B</p>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  style={{ borderRadius: '5px', marginRight: '20px' }}
+                  className={`button${isLoading ? ' disabled' : ''}`}
+                  onClick={handleUpload}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Processing...' : 'Upload'}
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="drop_file_input"
+              onDragOver={(e) => {
+                e.preventDefault();
+                e.currentTarget.classList.add('dragover');
+              }}
+              onDragLeave={(e) => {
+                e.currentTarget.classList.remove('dragover');
+              }}
+              onDrop={(e) => {
+                e.preventDefault();
+                e.currentTarget.classList.remove('dragover');
+                handleFileChange(e);
+              }}
+            >
+              <label htmlFor="fileInput" className="drop_file_input_label">
+                <img src={uploadImg} alt="" />
+                <p>Upload your video file here</p>
+              </label>
+              <input id="fileInput" className="user" type="file" onChange={handleFileChange} ref={fileInputRef} />
+            </div>
+          )}
+          {error && <p className="error-message" style={{ color:'red' }}>Error: {error}</p>}
+        </div>
       </div>
 
-      {/* Display the processed video if videoPath is available */}
       {videoPath && (
         <div className="output-video">
           <div className='output'>
@@ -139,7 +129,7 @@ const PredictVideo_characterModel = () => {
         </div>
       )}
 
-      {error && <p className="error-message">Error: {error}</p>}
+      {/* {error && <p className="error-message">Error: {error}</p>} */}
     </div>
   );
 };

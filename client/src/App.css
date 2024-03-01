@@ -10,6 +10,7 @@ body::-webkit-scrollbar {
   --blueCard: #ddf8fe;
   --purple: rgb(238 210 255);
   --blue: rgb(151, 16, 235);
+  --liteBlue: #61a5ff;
   --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
   --orangeCard: rgba(252, 166, 31, 0.45);
   --blueCard: rgba(151, 16, 235, 0.45);  ;

@@ -1,42 +1,47 @@
-
 .predict {
   margin-top: 10vh;
-  background-color: #eaf9e7;
+  background-color: #e9eff8;
   max-width: 100vw;
   min-height: 100vh;
-
 }
 
 .seasonalPrediction {
   padding: 1rem 3rem 1rem 3rem;
-max-height: 25vh;
+  max-height: 25vh;
   /* border: 2px solid red; */
-
-
 }
 
-.ses-left{
+.s-left {
   /* border: 2px solid red; */
   padding: 0;
   margin: 0;
-
+  margin-bottom: 2rem;
 }
 
-
-.ses-left > :nth-child(1) {
+.s-left > :nth-child(1) {
   color: var(--black);
   font-size: 2.5rem;
   font-weight: bold;
   margin-top: 10rem;
 }
 
-.ses-left > :nth-child(2) {
+.s-left > :nth-child(2) {
   color: var(--blue);
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.ses-right {
+.s-left > :nth-child(3) {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  /* background-color: white; */
+  border: 2px solid var(--liteBlue);
+  border-radius: 8px;
+}
+
+.s-right {
   margin-top: 10px;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -48,28 +53,25 @@ max-height: 25vh;
 }
 
 .drop_file_input {
-
   margin-top: 00px;
- border: 3px dashed rgb(151, 16, 235);
+  border: 3px dashed rgb(151, 16, 235);
   width: 500px;
   height: 15vh;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #eaf9e7 ;
+  background-color: #eaf9e7;
   cursor: pointer;
-
 }
 
 .drop_file_input input {
-display: none;
+  display: none;
 }
 
-.dragover{
+.dragover {
   opacity: 0.6;
 }
-
 
 .drop_file_input:hover {
   opacity: 0.6;
@@ -98,7 +100,7 @@ display: none;
   max-width: 100vw;
   border-radius: 20px;
   /* background: white; */
-  border:3px dashed  rgb(151, 16, 235);
+  border: 3px dashed rgb(151, 16, 235);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -106,11 +108,9 @@ display: none;
   align-items: center; */
 }
 
-
-
 .drop_file_preview_item {
   display: flex;
-  min-width: 600px ;
+  min-width: 600px;
 }
 
 .image {
@@ -120,10 +120,9 @@ display: none;
   width: 100px;
   /* margin-right: 20px; */
 }
-.image img{
+.image img {
   width: 80px;
   aspect-ratio: 1/1;
-
 }
 
 .drop_file_preview_item_info {
@@ -132,132 +131,126 @@ display: none;
   align-items: center;
   justify-content: baseline;
 }
-  
-  label {
-    font-size: 15px;
-    color: red;
+
+label {
+  font-size: 15px;
+  color: red;
+}
+
+span {
+  margin-top: 1rem;
+}
+
+.first {
+  margin-top: 1rem;
+}
+
+.last {
+  margin-bottom: 1rem;
+}
+
+.pre-result {
+  width: 20rem;
+  height: 2rem;
+  padding: 0.3em;
+  outline: none;
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  /* margin-left: 25rem; */
+}
+
+.plant {
+  color: red;
+}
+
+.plantDescription {
+  width: 20rem;
+  height: 8rem;
+  padding: 0.3em;
+  outline: none;
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-left: 5rem;
+}
+
+.p-desc {
+  margin-left: 7rem;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.output-video {
+  display: flex;
+  /* margin-top: 5rem; */
+  /* margin-left: 10rem; */
+  /* flex-direction: column; */
+  justify-content: center;
+  /* align-items:center ; */
+  gap: 0.5rem;
+  /* margin-top: 2rem; */
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.zoom-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+}
+
+.processedVideo {
+  border: 2px solid var(--blue);
+  border-radius: 20px;
+  /* width: 1080px; */
+  /* height: 540px; */
+  box-shadow: var(--boxShadow);
+}
+
+.table {
+  margin-top: 2.2rem;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+/* Responsive css */
+@media (max-width: 570px) {
+  .seasonalPrediction {
+    padding: 0;
+    flex-direction: column;
+    gap: 5rem;
+    height: 70rem;
   }
-  
-  span {
-    margin-top: 1rem;
+
+  .s-left {
+    margin-top: -8rem;
   }
-  
-  .first {
-    margin-top: 1rem;
+  .s-right {
+    margin-left: -0rem;
   }
-  
- 
-  
-  .last {
-    margin-bottom: 1rem;
-  }
-  
-  .pre-result {
-    width: 20rem;
+  .s-right .user {
+    width: 18rem;
     height: 2rem;
-    padding: 0.3em;
-    outline: none;
-    border: 2px solid var(--green);
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    /* margin-left: 25rem; */
-  }
- 
-
-
-  .plant {
-    color: red;
-  }
-  
-  .plantDescription {
-    width: 20rem;
-    height: 8rem;
-    padding: 0.3em;
-    outline: none;
-    border: 2px solid var(--green);
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    margin-left: 5rem;
-  }
-  
-  .p-desc {
-    margin-left: 7rem;
-    margin-bottom: 2px;
-    font-weight: bold;
-  }
-  
-  .output-video {
-    display: flex;
-    /* margin-top: 5rem; */
-    /* margin-left: 10rem; */
-    /* flex-direction: column; */
-    justify-content: center;
-    /* align-items:center ; */
-    gap: 0.5rem;
-    /* margin-top: 2rem; */
   }
 
-  .output{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .container1:before {
+    bottom: 72%;
+    left: 50%;
   }
-  
-  .zoom-container{
-    display: flex;
-    flex-direction: column;
-    margin-left: 5rem;
-  }
-  
-  .processedVideo {
-    border: 2px solid var(--blue);
-    border-radius: 20px;
-    /* width: 1080px; */
-    /* height: 540px; */
-    box-shadow: var(--boxShadow);
-  }
-  
-  .table{
-    margin-top: 2.2rem;
-  }
-  
 
-  .disabled {
-    pointer-events: none;
-    opacity: 0.6;
+  .container1.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
   }
-  /* Responsive css */
-  @media (max-width: 570px) {
-    .seasonalPrediction {
-      padding: 0;
-      flex-direction: column;
-      gap: 5rem;
-      height: 70rem;
-    }
-  
-    .ses-left {
-      margin-top: -8rem;
-    }
-    .ses-right {
-      margin-left: -0rem;
-    }
-    .ses-right .user {
-      width: 18rem;
-      height: 2rem;
-    }
-  
-    .container1:before {
-      bottom: 72%;
-      left: 50%;
-    }
-  
-    .container1.sign-up-mode:before {
-      bottom: 28%;
-      left: 50%;
-    }
-  }
-  
+}

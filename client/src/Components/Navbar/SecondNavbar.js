@@ -13,8 +13,8 @@ const SecondNavbar = () => {
         <div className="nav-list">
           <ul style={{ listStyleType: 'none' }}>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/predict_image_charModel">Image Detection</Link></li>
-            <li><Link to="/predict_video_charModel">Video Detection</Link></li>
+            <li><Link to="/predict_image_charModel">ImageDetection</Link></li>
+            <li><Link to="/predict_video_charModel">VideoDetection</Link></li>
             {/* Add other links as needed */}
           </ul>
         </div>
