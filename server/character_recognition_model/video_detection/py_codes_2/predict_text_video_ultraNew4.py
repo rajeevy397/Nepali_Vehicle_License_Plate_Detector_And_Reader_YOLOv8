@@ -118,11 +118,11 @@ for image_file in image_files:
                 text_y = H - text_size[1]
             
             # Draw the text background
-            cv2.rectangle(image, (text_x - 5, text_y - text_size[1] - 5), 
-                          (text_x + text_size[0] + 5, text_y + 5), (0, 0, 255), -1)
+            # cv2.rectangle(image, (text_x - 5, text_y - text_size[1] - 5), 
+            #               (text_x + text_size[0] + 5, text_y + 5), (0, 0, 255), -1)
             
             # Draw the label text
-            cv2.putText(image, label_text, (text_x, text_y), font, font_scale, (255, 255, 255), font_thickness, cv2.LINE_AA)
+            # cv2.putText(image, label_text, (text_x, text_y), font, font_scale, (255, 255, 255), font_thickness, cv2.LINE_AA)
 
     # Save the original image with bounding boxes
     output_image_path = os.path.join(output_folder, f'output_image.jpg')
@@ -141,6 +141,7 @@ for image_file in image_files:
     # Run other scripts serially
     subprocess.run(['python', os.path.join(py_codes_path,'new_text_detector_and_sortorVideo11.py')])
     subprocess.run(['python', os.path.join(py_codes_path,'json_combiner2.py')])
+    subprocess.run(['python', os.path.join(py_codes_path,'write_labels_video2.py')])
     subprocess.run(['python', os.path.join(py_codes_path,'write_character_onVideo2.py')])
 
 # Run the frames_toVideo.py script after processing all images

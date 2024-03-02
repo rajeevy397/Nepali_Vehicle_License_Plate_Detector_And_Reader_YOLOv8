@@ -67,7 +67,7 @@ def write_characters_on_image(json_path, target_image_path, custom_font_path):
                 font_thickness = 3
                 text_size = cv2.getTextSize(label_text, label_font, font_scale, font_thickness)[0]
 
-                text_x = int(coordinates["x1"] + (coordinates["x1"] - coordinates["x1"]) / 2 - text_size[0] / 2)
+                text_x = int(coordinates["x1"] + (coordinates["x2"] - coordinates["x1"]) / 2 - text_size[0] / 2)
                 text_y = int(coordinates["y2"] + text_size[1] + 10)
 
                 if text_x < 0:
@@ -86,16 +86,17 @@ def write_characters_on_image(json_path, target_image_path, custom_font_path):
 
     # Save the modified image
     output_dir = os.path.dirname(target_image_path)
-    output_filename = f"output_{os.path.basename(target_image_path)}"
-    output_path = os.path.join(output_dir, output_filename)
-    image.save(output_path)
+    # output_filename = f"output_{os.path.basename(target_image_path)}"
+    # output_path = os.path.join(output_dir, output_filename)
+    # image.save(output_path)
     # output_filename1 = f"output1_{os.path.basename(target_image_path)}"
-    # output_path1 = os.path.join(output_dir, output_filename1)
-    # cv2.imwrite(output_path1, image1)
+    output_filename1 = f"output_image.jpg"
+    output_path1 = os.path.join(output_dir, output_filename1)
+    cv2.imwrite(output_path1, image1)
 
 if __name__ == "__main__":
     PATH = os.path.join(
-    '.', 'character_recognition_model', 'image_detection', 'outputs') 
+    '.', 'character_recognition_model', 'video_detection', 'outputs') 
 
     # Specify the path of the JSON file containing coordinates and NumberPlateText
     json_path = os.path.join(PATH,'combined_json_output', 'combined_data.json')

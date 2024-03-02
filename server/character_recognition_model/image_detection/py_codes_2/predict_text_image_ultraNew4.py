@@ -81,7 +81,7 @@ for idx, result in enumerate(results.boxes.data.tolist()):
             
             # Define text properties
             # label_text = results.names[int(class_id)].upper()
-            label_text = 'Nepali Number plate'
+            label_text = 'NepNumPlate'
             font = cv2.FONT_HERSHEY_SIMPLEX
             font_scale = 1
             font_thickness = 3
@@ -103,11 +103,11 @@ for idx, result in enumerate(results.boxes.data.tolist()):
                 text_y = H - text_size[1]
             
             # Draw the text background
-            cv2.rectangle(image, (text_x - 5, text_y - text_size[1] - 5), 
-                          (text_x + text_size[0] + 5, text_y + 5), (0, 0, 255), -1)
+            # cv2.rectangle(image, (text_x - 5, text_y - text_size[1] - 5), 
+            #               (text_x + text_size[0] + 5, text_y + 5), (0, 0, 255), -1)
             
             # Draw the label text
-            cv2.putText(image, label_text, (text_x, text_y), font, font_scale, (255, 255, 255), font_thickness, cv2.LINE_AA)
+            # cv2.putText(image, label_text, (text_x, text_y), font, font_scale, (255, 255, 255), font_thickness, cv2.LINE_AA)
 
 # Save the original image with bounding boxes
 output_image_path = os.path.join(output_folder, 'output_image.jpg')
@@ -126,6 +126,7 @@ print(f"Original image with bounding boxes saved at: {output_image_path}")
 py_codes_path = os.path.join('.', 'character_recognition_model', 'image_detection', 'py_codes_2')
 subprocess.run(['python', os.path.join(py_codes_path,'new_text_detector_and_sortor11.py')])
 subprocess.run(['python', os.path.join(py_codes_path,'json_combiner2.py')])
+subprocess.run(['python', os.path.join(py_codes_path,'write_labels.py')])
 subprocess.run(['python', os.path.join(py_codes_path,'write_character_onImage2.py')])
 
 subprocess.run(['python', os.path.join('.','character_recognition_model', 'image_detection', 'py_codes_2','cropped_plates_py_codes','copy_files.py')])
