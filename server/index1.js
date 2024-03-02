@@ -137,6 +137,39 @@ app.get('/jsondata', (req, res) => {
   });
 });
 
+// Serve the list of image filenames
+app.get('/images', (req, res) => {
+  const imageDirectory = path.join(__dirname, 'character_recognition_model', 'image_detection', 'outputs', 'NumberPlates', 'output_with_labels');
+
+  fs.readdir(imageDirectory, (err, files) => {
+    if (err) {
+      console.error('Error reading image directory:', err);
+      res.status(500).json({ error: 'Failed to read image directory' });
+    } else {
+      const imageFiles = files.filter(file => file.endsWith('.jpg')); // Filter only JPEG files
+      res.json(imageFiles);
+    }
+  });
+});
+
+// Serve individual image files
+app.get('/images/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const imagePath = path.join(__dirname, 'character_recognition_model', 'image_detection', 'outputs', 'NumberPlates', 'output_with_labels', filename);
+
+  // Check if the file exists
+  fs.exists(imagePath, exists => {
+    if (exists) {
+      // If the file exists, serve it
+      res.sendFile(imagePath);
+    } else {
+      // If the file doesn't exist, return a 404 error
+      res.status(404).send('Image not found');
+    }
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

@@ -1,0 +1,53 @@
+/* Styling for the heading */
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative; /* Position relative for absolute positioning of pseudo-element */
+    display: inline-block; /* Ensures the element takes only the necessary width */
+    margin-left: 28rem;
+}
+
+/* Animation keyframes for shining effect */
+@keyframes shine {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Styling for the shining effect */
+.heading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    animation: shine 1.5s infinite linear;
+    overflow: hidden; /* Ensure the shining effect is clipped to the text boundaries */
+}
+
+/* Styling for the container of cropped plates */
+.cropped_plates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: calc(100% - 4rem); /* Adjust based on your layout */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+
+/* Styling for individual cropped plates */
+.plates {
+    height: 300px;
+    width: 100%; /* Occupy full width of the grid cell */
+    object-fit: cover; /* Maintain aspect ratio while filling the space */
+    border: 3px solid rgb(151, 16, 235);
+    border-radius: 20px; 
+    box-shadow: 0px 20px 24px 3px rgba(94, 142, 255, 0.42);   
+}

@@ -5,6 +5,7 @@ import PredictImage from './pages/Predict_image';
 import PredictImage_characterModel from './pages/PredictImage_characterModel';
 import PredictVideo from './pages/Predict_video';
 import PredictVideo_characterModel from './pages/PredictVideo_characterModel';
+import CroppedNumberPlates from './Components/CroppedNumberPlates/CroppedNumberPlates';
 
 
 function MyRoutes() {
@@ -16,6 +17,7 @@ function MyRoutes() {
         <Route path="/predict_image_charModel" element={<PredictImage_characterModel/>} />
         <Route path="/predict_video" element={<PredictVideo/>} />
         <Route path="/predict_video_charModel" element={<PredictVideo_characterModel/>} />
+        <Route path="/croppedPlates" element={<CroppedNumberPlates/>} />
       </Routes>
     </Router>
   );

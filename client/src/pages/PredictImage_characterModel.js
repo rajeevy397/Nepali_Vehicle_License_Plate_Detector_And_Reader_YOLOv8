@@ -5,6 +5,7 @@ import SecondNavbar from '../Components/Navbar/SecondNavbar';
 import './predict_image.css';
 import uploadImg from '../img/upload.png';
 import { ImageConfig } from '../ImageConfig';
+import CroppedNumberPlates from '../Components/CroppedNumberPlates/CroppedNumberPlates';
 
 const PredictImage_characterModel = () => {
   const fileInputRef = useRef(null);
@@ -178,6 +179,7 @@ const PredictImage_characterModel = () => {
         </div>
 
         {imagePath && (
+          <div className='output'>
           <div className="output-image">
             <div
               className="zoom-container"
@@ -208,6 +210,10 @@ const PredictImage_characterModel = () => {
             <div className="table">
               <JsonTable jsonData={jsonData} />
             </div>
+          </div>
+          <div>
+          <CroppedNumberPlates/>
+          </div>
           </div>
         )}
       </div>
