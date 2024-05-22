@@ -26,7 +26,7 @@ client/yarn-error.log*
 #ignore images,temp and videos
 server/temp/*
 server/images/*
-# server/models/*
+server/models/*
 
 #ignore image detection outputs to be pushed
 server/character_recognition_model/image_detection/images/*
