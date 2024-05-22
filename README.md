@@ -34,6 +34,7 @@ The Nepali Vehicle License Plate Detection System is an intelligent system desig
    - then do node index.js or nodemon index.js
 
 # DATASET SAMPLES AND LINK OF DATASETS
+<img src="https://github.com/rajeevy397/Nepali_Vehicle_License_Plate_Detector_And_Reader_YOLOv8_EasyOcr/assets/94947701/bebae3e2-345a-40aa-9c29-5a52cee4cb79" width="200" height="400" />
 ![75](https://github.com/rajeevy397/Nepali_Vehicle_License_Plate_Detector_And_Reader_YOLOv8_EasyOcr/assets/94947701/bebae3e2-345a-40aa-9c29-5a52cee4cb79)
 ![99](https://github.com/rajeevy397/Nepali_Vehicle_License_Plate_Detector_And_Reader_YOLOv8_EasyOcr/assets/94947701/e709cac3-e90b-419b-bdaf-000abe4136fb)
 ![103](https://github.com/rajeevy397/Nepali_Vehicle_License_Plate_Detector_And_Reader_YOLOv8_EasyOcr/assets/94947701/be714705-9666-4b64-b00e-d2651fef920f)
