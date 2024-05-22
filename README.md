@@ -28,10 +28,14 @@ The Nepali Vehicle License Plate Detection System is an intelligent system desig
    - do npm install
    - then do npm start
 ### Backend Setup
-1. change directory to server then do intallation and start the server by running following command
+1. change directory to server then do installation and start the server by running following command
    - cd server
    - do npm install
-   - then do node index.js or nodemon index.js
+   - place your trained yolo models inside models folder located in server folder
+   - Rename Your models to:
+      - characterRecognizer.pt (For charater recognizer model)
+      - NumberPlateDetector.pt (For Number Plate Detector model) 
+   - then do npm start
 
 # DATASET SAMPLES WITH ANNOTATIONS FOR YOLO MODEL AND LINK OF DATASETS
 ## Vehicles Dataset samples
