@@ -60,12 +60,12 @@ The Nepali Vehicle License Plate Detection System is an intelligent system desig
 <img src="https://github.com/rajeevy397/Nepali_Vehicle_License_Plate_Detector_And_Reader_YOLOv8_EasyOcr/assets/94947701/71c6e00e-fce3-4943-9abc-e78911ac872d" width="200" height="200" />
 
 
-## To get Datasets. Request me on this Drive Link (Pay NPR 100 Rupees)
-(Disclaimer: You Have to pay NPR 100 Rupees For Our Team Hard Work)
+## To get Datasets. Request me on this Drive Link (Pay NPR 1000 Rupees)
+(Disclaimer: You Have to pay NPR 1000 Rupees For Our Team Hard Work)
 
 Drive Link: https://drive.google.com/drive/folders/1z2FiyICN-oQhGiR2uyJ8lvnjhrqN3wZe?usp=sharing
 
-## If You want Trained Model Links (Pay NPR 500 Rupees)
-(Disclaimer: You Have to pay NPR 500 Rupees For Our Team Hard Work)
+## If You want Trained Model Links (Pay NPR 1200 Rupees)
+(Disclaimer: You Have to pay NPR 1200 Rupees For Our Team Hard Work)
 
 Drive Link: https://drive.google.com/drive/folders/1V39DO5ywArRYQ6nkLhKBlO2ObGNdPkA3?usp=sharing
